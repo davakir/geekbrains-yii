@@ -1,0 +1,48 @@
+/* Colors */
+section.service {
+  text-align: left;
+  box-sizing: border-box; }
+  section.service .title {
+    text-align: center; }
+  section.service .photoset-type {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 15px 20px;
+    text-align: left; }
+  section.service .inside-list {
+    padding-left: 30px;
+    list-style-type: none;
+    font-weight: 300;
+    color: #fff; }
+    section.service .inside-list span {
+      padding-right: 10px;
+      color: #489E96; }
+
+@media screen and (max-width: 1080px) and (min-width: 721px) {
+  section.service .title h1 {
+    font-size: 22px; } }
+/* For tablet */
+@media screen and (max-width: 960px) and (min-width: 800px) {
+  section.service {
+    width: 85%; }
+    section.service .photoset-type {
+      text-align: left;
+      padding: 10px; }
+    section.service .photoset-type h2 {
+      font-size: 20px; } }
+@media screen and (max-width: 800px) and (min-width: 720px) {
+  section.service {
+    width: 90%; } }
+/* For mobile */
+@media screen and (max-width: 720px) {
+  section.service {
+    padding-top: 10px; }
+    section.service .photoset-type {
+      float: none;
+      width: 90%;
+      margin-left: auto !important;
+      margin-right: auto !important; }
+      section.service .photoset-type h3 {
+        font-size: 16px; } }
+
+/*# sourceMappingURL=service.css.map */
