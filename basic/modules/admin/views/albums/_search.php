@@ -15,7 +15,7 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'album_id') ?>
+    <?= $form->field($model, 'id') ?>
 
     <?= $form->field($model, 'ya_album_id') ?>
 
@@ -46,8 +46,6 @@ use yii\widgets\ActiveForm;
     <?php // echo $form->field($model, 'date_published') ?>
 
     <?php // echo $form->field($model, 'image_count') ?>
-
-    <?php // echo $form->field($model, 'visible') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

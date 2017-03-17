@@ -24,7 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'album_id',
+            'id',
             'ya_album_id',
             'author',
             'title',
@@ -40,7 +40,6 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'date_updated',
             // 'date_published',
             // 'image_count',
-            // 'visible',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
