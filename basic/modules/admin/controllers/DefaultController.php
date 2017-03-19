@@ -2,6 +2,9 @@
 
 namespace app\modules\admin\controllers;
 
+use app\models\LoginForm;
+use app\models\RegistrationForm;
+use Yii;
 use yii\web\Controller;
 
 /**

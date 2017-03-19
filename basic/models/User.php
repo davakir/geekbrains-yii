@@ -30,7 +30,7 @@ class User extends Object implements IdentityInterface
      */
     public static function findIdentity($id)
     {
-	    $user = Users::findOne(['id' => $id]);
+	    $user = Users::findOne($id);
 	
 	    return empty($user) ? null : new static($user->toArray());
     }

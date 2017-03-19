@@ -28,7 +28,7 @@ AppAsset::register($this);
 	<?php
 	NavBar::begin([
 		'brandLabel' => 'MargoPortfolio Admin',
-		'brandUrl' => Yii::$app->homeUrl,
+		'brandUrl' => '/admin',
 		'options' => [
 			'class' => 'navbar-inverse navbar-fixed-top',
 		],
@@ -36,11 +36,13 @@ AppAsset::register($this);
 	echo Nav::widget([
 		'options' => ['class' => 'navbar-nav navbar-right'],
 		'items' => [
-			['label' => 'Admin Home', 'url' => ['/admin']],
-			['label' => 'Articles', 'url' => ['/admin/articles/index']],
-			['label' => 'Albums', 'url' => ['/admin/albums/index']],
-			['label' => 'Photos', 'url' => ['/admin/photos/index']],
-			['label' => 'Users', 'url' => ['/admin/users/index']]
+			['label' => 'Articles', 'url' => ['/admin/articles/']],
+			['label' => 'Albums', 'url' => ['/admin/albums/']],
+			['label' => 'Photos', 'url' => ['/admin/photos/']],
+			['label' => 'Users', 'url' => ['/admin/users/']],
+			['label' => 'Roles', 'url' => ['/admin/roles/']],
+			['label' => 'Products', 'url' => ['/admin/products/']],
+			['label' => 'Producers', 'url' => ['/admin/producers/']]
 		],
 	]);
 	NavBar::end();

@@ -5,6 +5,7 @@ $params = require(__DIR__ . '/params.php');
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
+	'defaultRoute' => 'main/index',
     'bootstrap' => ['log'],
     'components' => [
         'request' => [
@@ -19,7 +20,7 @@ $config = [
             'enableAutoLogin' => true,
         ],
         'errorHandler' => [
-            'errorAction' => 'site/error',
+            'errorAction' => 'main/error',
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
@@ -41,7 +42,15 @@ $config = [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
+	        'enableStrictParsing' => false,
             'rules' => [
+            	'/' => 'main/index',
+	            'gallery' => 'main/gallery',
+            	'products' => 'main/products',
+	            'products/<id:\d+>/view' => 'main/view',
+	            'about' => 'main/about',
+	            'services' => 'main/services',
+	            'contacts' => 'main/contacts'
             ],
         ],
     ],
