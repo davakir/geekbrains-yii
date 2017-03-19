@@ -1,0 +1,46 @@
+/* Colors */
+#products {
+  width: 60%;
+  margin: 0 auto; }
+  #products .product-item {
+    position: relative;
+    margin-bottom: 10px;
+    text-align: left; }
+    #products .product-item .icon {
+      display: inline-block;
+      text-align: justify; }
+      #products .product-item .icon img {
+        width: 100px; }
+    #products .product-item .info {
+      display: inline-block;
+      vertical-align: middle; }
+    #products .product-item .name a {
+      color: #3B756E; }
+      #products .product-item .name a:hover {
+        color: #A1D8B1;
+        text-decoration: underline; }
+
+#product {
+  width: 70%;
+  margin: 0 auto; }
+  #product .icon {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    max-width: 20%;
+    float: left; }
+    #product .icon img {
+      width: 100%; }
+  #product .description {
+    float: right;
+    width: 80%;
+    padding: 20px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+  #product:after {
+    display: block;
+    clear: both;
+    content: ''; }
+
+/*# sourceMappingURL=products.css.map */
