@@ -20,14 +20,14 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'role_id')->textInput() ?>
 
-    <?= $form->field($model, 'is_admin')->checkbox() ?>
-
-    <?= $form->field($model, 'is_default')->checkbox() ?>
-
     <?= $form->field($model, 'auth_key')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'access_token')->textInput(['maxlength' => true]) ?>
-
+	
+	<?= $form->field($model, 'is_admin')->checkbox() ?>
+	
+	<?= $form->field($model, 'is_default')->checkbox() ?>
+	
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>

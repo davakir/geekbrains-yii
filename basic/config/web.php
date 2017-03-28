@@ -53,6 +53,9 @@ $config = [
 	            'contacts' => 'main/contacts'
             ],
         ],
+	    'yandexMapsApi' => [
+		    'class' => 'mirocow\yandexmaps\Api',
+	    ]
     ],
 	
 	'modules' => [

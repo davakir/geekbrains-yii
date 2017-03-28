@@ -3,6 +3,8 @@
 namespace app\models;
 
 use Yii;
+use yii\behaviors\TimestampBehavior;
+use yii\db\Expression;
 
 /**
  * This is the model class for table "photos".
@@ -30,6 +32,21 @@ class Photos extends \yii\db\ActiveRecord
     {
         return 'photos';
     }
+	
+	/**
+	 * @inheritdoc
+	 */
+	public function behaviors()
+	{
+		return [
+			[
+				'class' => TimestampBehavior::className(),
+				'createdAtAttribute' => 'date_created',
+				'updatedAtAttribute' => 'date_updated',
+				'value' => new Expression('NOW()'),
+			],
+		];
+	}
 
     /**
      * @inheritdoc

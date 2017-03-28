@@ -34,13 +34,17 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'link_alternate')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'date_edited')->textInput() ?>
-
-    <?= $form->field($model, 'date_updated')->textInput() ?>
-
-    <?= $form->field($model, 'date_published')->textInput() ?>
-
     <?= $form->field($model, 'image_count')->textInput() ?>
+	
+	<?= $form->field($model, 'date_published')->widget(\yii\jui\DatePicker::classname(), [
+		'language' => 'ru',
+		'dateFormat' => 'yyyy-MM-dd',
+	]) ?>
+	
+	<?= $form->field($model, 'date_edited')->widget(\yii\jui\DatePicker::classname(), [
+		'language' => 'ru',
+		'dateFormat' => 'yyyy-MM-dd',
+	]) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

@@ -58,4 +58,12 @@ class MainController extends Controller
 			'product' => $product
 		]);
 	}
+	
+	/**
+	 * @return string
+	 */
+	public function actionContacts()
+	{
+		return $this->render('contacts');
+	}
 }

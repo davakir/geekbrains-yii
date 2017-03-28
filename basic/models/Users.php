@@ -2,6 +2,8 @@
 
 namespace app\models;
 
+use app\models\events\UserEvent;
+use yii\base\Event;
 use yii\db\ActiveRecord;
 
 /**
@@ -16,12 +18,15 @@ use yii\db\ActiveRecord;
  * @property boolean $is_default
  * @property string $auth_key
  * @property string $access_token
+ * @property bool $in_mailing_list
  *
  * @property Articles[] $articles
  * @property Roles $role
  */
 class Users extends ActiveRecord
 {
+	const CREATE_USER = 'create_user';
+	
     /**
      * @inheritdoc
      */
@@ -61,6 +66,7 @@ class Users extends ActiveRecord
             'is_default' => 'Is Default',
             'auth_key' => 'Auth Key',
             'access_token' => 'Access Token',
+	        'in_mailing_list' => 'In mailing list'
         ];
     }
 
@@ -78,5 +84,22 @@ class Users extends ActiveRecord
     public function getRole()
     {
         return $this->hasOne(Roles::className(), ['id' => 'role_id']);
+    }
+	
+	/**
+	 * Сохраняем пользователя в базу.
+	 *
+	 * @param bool $runValidation
+	 * @param null $attributeNames
+	 * @return bool
+	 */
+    public function save($runValidation = true, $attributeNames = null)
+    {
+	    $result = parent::save($runValidation, $attributeNames);
+	    $event = new UserEvent();
+	    $event->userId = $this->id;
+	    $this->trigger(self::CREATE_USER, $event);
+	    
+	    return $result;
     }
 }

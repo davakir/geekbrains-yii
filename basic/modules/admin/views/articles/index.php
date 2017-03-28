@@ -10,7 +10,7 @@ use yii\grid\GridView;
 $this->title = 'Articles';
 
 /* Ссылки не те, надо доработать */
-//$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="articles-index">
 
