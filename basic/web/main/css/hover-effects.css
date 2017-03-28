@@ -3,29 +3,34 @@
   margin: 0 auto;
   list-style: none;
   text-align: center; }
-  .album-grid li {
-    display: inline-block;
-    margin: 0;
-    text-align: left;
-    position: relative; }
-  .album-grid figure {
-    margin: 0;
-    position: relative; }
-    .album-grid figure img {
-      max-width: 100%;
-      display: block;
-      position: relative; }
-  .album-grid figcaption {
-    position: absolute;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-    padding: 5px;
-    background: #3B756E;
-    color: #FBE3C9; }
-    .album-grid figcaption p {
-      font-size: 20px;
-      font-weight: 700; }
+
+.album-grid li {
+  display: inline-block;
+  margin: 0;
+  text-align: left;
+  position: relative; }
+
+.album-grid figure {
+  margin: 0;
+  position: relative; }
+
+.album-grid figure img {
+  max-width: 100%;
+  display: block;
+  position: relative; }
+
+.album-grid figcaption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  padding: 5px;
+  background: #3B756E;
+  color: #FBE3C9; }
+
+.album-grid figcaption p {
+  font-size: 20px;
+  font-weight: 700; }
 
 @media screen and (max-width: 720px) {
   .album-grid figcaption p {
@@ -43,12 +48,15 @@
   -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
   -moz-transition: -moz-transform 0.3s, opacity 0.3s;
   transition: transform 0.3s, opacity 0.3s; }
-  .cs-style-1 figcaption h3 {
-    margin-top: 70px; }
-  .cs-style-1 figcaption span {
-    display: block; }
-  .cs-style-1 figcaption a {
-    margin-top: 30px; }
+
+.cs-style-1 figcaption h3 {
+  margin-top: 70px; }
+
+.cs-style-1 figcaption span {
+  display: block; }
+
+.cs-style-1 figcaption a {
+  margin-top: 30px; }
 
 .no-touch .cs-style-1 figure:hover figcaption,
 .cs-style-1 figure.cs-hover figcaption {
@@ -77,18 +85,20 @@
   width: 100%;
   top: auto;
   bottom: 0; }
-  .cs-style-2 figcaption a {
-    position: absolute;
-    right: 20px;
-    top: 30px; }
+
+.cs-style-2 figcaption a {
+  position: absolute;
+  right: 20px;
+  top: 30px; }
 
 /* Caption Style 3 */
 .cs-style-3 figure {
   overflow: hidden; }
-  .cs-style-3 figure .album-icon {
-    -webkit-transition: -webkit-transform 0.4s;
-    -moz-transition: -moz-transform 0.4s;
-    transition: transform 0.4s; }
+
+.cs-style-3 figure .album-icon {
+  -webkit-transition: -webkit-transform 0.4s;
+  -moz-transition: -moz-transform 0.4s;
+  transition: transform 0.4s; }
 
 .no-touch .cs-style-3 figure:hover .album-icon,
 .cs-style-3 figure.cs-hover .album-icon {
@@ -110,10 +120,11 @@
   -webkit-transition: -webkit-transform 0.4s, opacity 0.1s 0.3s;
   -moz-transition: -moz-transform 0.4s, opacity 0.1s 0.3s;
   transition: transform 0.4s, opacity 0.1s 0.3s; }
-  .cs-style-3 figcaption a {
-    position: absolute;
-    bottom: 20px;
-    right: 20px; }
+
+.cs-style-3 figcaption a {
+  position: absolute;
+  bottom: 20px;
+  right: 20px; }
 
 .no-touch .cs-style-3 figure:hover figcaption,
 .cs-style-3 figure.cs-hover figcaption {
@@ -139,10 +150,11 @@
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   transform-style: preserve-3d; }
-  .cs-style-4 figure img {
-    -webkit-transition: -webkit-transform 0.4s;
-    -moz-transition: -moz-transform 0.4s;
-    transition: transform 0.4s; }
+
+.cs-style-4 figure img {
+  -webkit-transition: -webkit-transform 0.4s;
+  -moz-transition: -moz-transform 0.4s;
+  transition: transform 0.4s; }
 
 .cs-style-4 figure > div {
   overflow: hidden; }
@@ -170,10 +182,11 @@
   -webkit-transition: -webkit-transform 0.4s, opacity 0.1s 0.3s;
   -moz-transition: -moz-transform 0.4s, opacity 0.1s 0.3s;
   transition: transform 0.4s, opacity 0.1s 0.3s; }
-  .cs-style-4 figcaption a {
-    position: absolute;
-    bottom: 20px;
-    right: 20px; }
+
+.cs-style-4 figcaption a {
+  position: absolute;
+  bottom: 20px;
+  right: 20px; }
 
 .no-touch .cs-style-4 figure:hover figcaption,
 .cs-style-4 figure.cs-hover figcaption {
@@ -191,6 +204,7 @@
   -webkit-transition: -webkit-transform 0.4s;
   -moz-transition: -moz-transform 0.4s;
   transition: transform 0.4s; }
+
 .cs-style-5 figure a {
   position: absolute;
   bottom: 20px;
@@ -243,24 +257,31 @@
 .cs-style-6 figcaption {
   height: 100%;
   width: 100%; }
-  .cs-style-6 figcaption h3 {
-    margin-top: 60%; }
-  .cs-style-6 figcaption a {
-    position: absolute;
-    bottom: 20px;
-    right: 20px; }
+
+.cs-style-6 figcaption h3 {
+  margin-top: 60%; }
+
+.cs-style-6 figcaption a {
+  position: absolute;
+  bottom: 20px;
+  right: 20px; }
 
 /* Caption Style 7 */
 .cs-style-7 li:first-child {
   z-index: 6; }
+
 .cs-style-7 li:nth-child(2) {
   z-index: 5; }
+
 .cs-style-7 li:nth-child(3) {
   z-index: 4; }
+
 .cs-style-7 li:nth-child(4) {
   z-index: 3; }
+
 .cs-style-7 li:nth-child(5) {
   z-index: 2; }
+
 .cs-style-7 li:nth-child(6) {
   z-index: 1; }
 
@@ -278,17 +299,20 @@
   -moz-transition: opacity 0.3s, height 0.3s, box-shadow 0.3s;
   transition: opacity 0.3s, height 0.3s, box-shadow 0.3s;
   box-shadow: 0 0 0 0 #2c3f52; }
-  .cs-style-7 figcaption h3, .cs-style-7 figcaption span, .cs-style-7 figcaption a {
-    opacity: 0;
-    -webkit-transition: opacity 0s;
-    -moz-transition: opacity 0s;
-    transition: opacity 0s; }
-  .cs-style-7 figcaption h3 {
-    margin-top: 86%; }
-  .cs-style-7 figcaption a {
-    position: absolute;
-    bottom: 20px;
-    right: 20px; }
+
+.cs-style-7 figcaption h3, .cs-style-7 figcaption span, .cs-style-7 figcaption a {
+  opacity: 0;
+  -webkit-transition: opacity 0s;
+  -moz-transition: opacity 0s;
+  transition: opacity 0s; }
+
+.cs-style-7 figcaption h3 {
+  margin-top: 86%; }
+
+.cs-style-7 figcaption a {
+  position: absolute;
+  bottom: 20px;
+  right: 20px; }
 
 .no-touch .cs-style-7 figure:hover figcaption,
 .cs-style-7 figure.cs-hover figcaption {

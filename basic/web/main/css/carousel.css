@@ -8,70 +8,93 @@ section#animation {
   width: 90%;
   margin-left: auto !important;
   margin-right: auto !important; }
-  section#animation .part {
-    width: 320px;
-    position: relative;
-    display: inline-block;
-    box-sizing: border-box;
-    margin-bottom: 5px;
-    background-color: #31333a; }
-    section#animation .part .img {
-      display: block;
-      position: absolute;
-      top: 0;
-      width: 100%;
-      margin: auto;
-      overflow: hidden;
-      background: center no-repeat;
-      background-size: cover;
-      opacity: 0; }
-      section#animation .part .img:before {
-        content: "";
-        padding-top: 100%;
-        float: left; }
-      section#animation .part .img:first-child {
-        position: relative; }
-    section#animation .part:after {
-      display: block;
-      content: "";
-      clear: both;
-      visibility: hidden; }
-  section#animation #part-1 .img-1 {
-    background-image: url("../img/nature.jpg"); }
-  section#animation #part-1 .img-2 {
-    background-image: url("../img/wed1.jpg"); }
-  section#animation #part-1 .img-3 {
-    background-image: url("../img/wed2.jpg"); }
-  section#animation #part-2 .img-1 {
-    background-image: url("../img/fall.jpg"); }
-  section#animation #part-2 .img-2 {
-    background-image: url("../img/hair.jpg"); }
-  section#animation #part-2 .img-3 {
-    background-image: url("../img/wed3.jpg"); }
-  section#animation #part-3 .img-1 {
-    background-image: url("../img/outgoing.jpg"); }
-  section#animation #part-3 .img-2 {
-    background-image: url("../img/woman.jpg"); }
-  section#animation #part-3 .img-3 {
-    background-image: url("../img/nature.jpg"); }
-  section#animation #part-4 .img-1 {
-    background-image: url("../img/wed1.jpg"); }
-  section#animation #part-4 .img-2 {
-    background-image: url("../img/wed2.jpg"); }
-  section#animation #part-4 .img-3 {
-    background-image: url("../img/hair.jpg"); }
-  section#animation #part-5 .img-1 {
-    background-image: url("../img/woman.jpg"); }
-  section#animation #part-5 .img-2 {
-    background-image: url("../img/wed3.jpg"); }
-  section#animation #part-5 .img-3 {
-    background-image: url("../img/fall.jpg"); }
-  section#animation #part-6 .img-1 {
-    background-image: url("../img/hair.jpg"); }
-  section#animation #part-6 .img-2 {
-    background-image: url("../img/fall.jpg"); }
-  section#animation #part-6 .img-3 {
-    background-image: url("../img/wed1.jpg"); }
+
+section#animation .part {
+  width: 320px;
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  margin-bottom: 5px;
+  background-color: #31333a; }
+
+section#animation .part .img {
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+  background: center no-repeat;
+  background-size: cover;
+  opacity: 0; }
+
+section#animation .part .img:before {
+  content: "";
+  padding-top: 100%;
+  float: left; }
+
+section#animation .part .img:first-child {
+  position: relative; }
+
+section#animation .part:after {
+  display: block;
+  content: "";
+  clear: both;
+  visibility: hidden; }
+
+section#animation #part-1 .img-1 {
+  background-image: url("../img/nature.jpg"); }
+
+section#animation #part-1 .img-2 {
+  background-image: url("../img/wed1.jpg"); }
+
+section#animation #part-1 .img-3 {
+  background-image: url("../img/wed2.jpg"); }
+
+section#animation #part-2 .img-1 {
+  background-image: url("../img/fall.jpg"); }
+
+section#animation #part-2 .img-2 {
+  background-image: url("../img/hair.jpg"); }
+
+section#animation #part-2 .img-3 {
+  background-image: url("../img/wed3.jpg"); }
+
+section#animation #part-3 .img-1 {
+  background-image: url("../img/outgoing.jpg"); }
+
+section#animation #part-3 .img-2 {
+  background-image: url("../img/woman.jpg"); }
+
+section#animation #part-3 .img-3 {
+  background-image: url("../img/nature.jpg"); }
+
+section#animation #part-4 .img-1 {
+  background-image: url("../img/wed1.jpg"); }
+
+section#animation #part-4 .img-2 {
+  background-image: url("../img/wed2.jpg"); }
+
+section#animation #part-4 .img-3 {
+  background-image: url("../img/hair.jpg"); }
+
+section#animation #part-5 .img-1 {
+  background-image: url("../img/woman.jpg"); }
+
+section#animation #part-5 .img-2 {
+  background-image: url("../img/wed3.jpg"); }
+
+section#animation #part-5 .img-3 {
+  background-image: url("../img/fall.jpg"); }
+
+section#animation #part-6 .img-1 {
+  background-image: url("../img/hair.jpg"); }
+
+section#animation #part-6 .img-2 {
+  background-image: url("../img/fall.jpg"); }
+
+section#animation #part-6 .img-3 {
+  background-image: url("../img/wed1.jpg"); }
 
 @media screen and (min-width: 721px) and (max-width: 1080px) {
   section#animation .part {

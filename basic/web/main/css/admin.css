@@ -7,8 +7,9 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
-  .album:hover {
-    background-color: wheat; }
+
+.album:hover {
+  background-color: wheat; }
 
 /* Full-screen fader */
 .fader {
@@ -21,8 +22,9 @@
   background-color: rgba(150, 150, 150, 0.6);
   text-align: center;
   z-index: 10; }
-  .fader img.spinner {
-    margin-top: 15%; }
+
+.fader img.spinner {
+  margin-top: 15%; }
 
 /* For waiting icon */
 img.spinner {
