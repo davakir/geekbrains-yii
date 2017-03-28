@@ -5,7 +5,7 @@
 
 $this->title = 'Маргарита - Фотограф - Главная';
 
-$this->registerJsFile('/main/js/site/gallery.js');
+$this->registerJsFile('/main/js/gallery.js');
 $this->registerCssFile('/main/css/carousel.css');
 ?>
 <section id="animation">
