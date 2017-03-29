@@ -10,7 +10,6 @@ use mirocow\yandexmaps\Canvas as YandexCanvas;
 $this->title = 'Маргарита - Фотограф - Контакты';
 $this->registerJsFile('/main/js/formHandlers.js');
 $this->registerCssFile('/main/css/contacts.css');
-
 $map = new YandexMap('yandex_map', [
 	'center' => [55.7372, 37.6066],
 	'zoom' => 10,

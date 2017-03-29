@@ -6,6 +6,7 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\ProducersSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
+/* @var $dependency \yii\caching\DbDependency */
 
 $this->title = 'Producers';
 $this->params['breadcrumbs'][] = $this->title;
@@ -18,16 +19,22 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?= Html::a('Create Producers', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
-            'name',
-
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
+	<?php
+		if ($this->beginCache('producers', ['duration' => 60, 'dependency' => $dependency]))
+		{
+			echo GridView::widget([
+				'dataProvider' => $dataProvider,
+				'filterModel' => $searchModel,
+				'columns' => [
+					['class' => 'yii\grid\SerialColumn'],
+					
+					'id',
+					'name',
+					
+					['class' => 'yii\grid\ActionColumn'],
+				],
+			]);
+			$this->endCache();
+		}
+	?>
 </div>

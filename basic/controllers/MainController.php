@@ -3,9 +3,11 @@
 namespace app\controllers;
 
 
+use app\models\dependencies\ProductsDep;
 use app\models\Products;
 use app\models\ProductsSearch;
 use Yii;
+use yii\filters\PageCache;
 use yii\web\Controller;
 
 class MainController extends Controller
@@ -20,6 +22,18 @@ class MainController extends Controller
 		return [
 			'error' => [
 				'class' => 'yii\web\ErrorAction',
+			]
+		];
+	}
+	
+	public function behaviors()
+	{
+		return [
+			[
+				'class' => PageCache::className(),
+				'duration' => 3600 * 24 * 30,
+				'variations' => \Yii::$app->language,
+				'only' => ['contacts']
 			]
 		];
 	}
@@ -43,6 +57,7 @@ class MainController extends Controller
 		return $this->render('products', [
 			'searchModel' => $searchModel,
 			'dataProvider' => $dataProvider,
+			'dependency' => ProductsDep::getProductsDep()
 		]);
 	}
 	

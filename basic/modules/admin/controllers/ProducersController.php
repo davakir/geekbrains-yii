@@ -2,9 +2,11 @@
 
 namespace app\modules\admin\controllers;
 
+use app\models\dependencies\ProducersDep;
 use Yii;
 use app\models\Producers;
 use app\models\ProducersSearch;
+use yii\caching\DbDependency;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -41,6 +43,7 @@ class ProducersController extends Controller
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+	        'dependency' => ProducersDep::getDependency()
         ]);
     }
 
