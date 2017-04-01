@@ -2,13 +2,13 @@
 
 namespace app\models;
 
-use Yii;
+use yii\web\UploadedFile;
 
 /**
  * This is the model class for table "products".
  *
  * @property integer $id
- * @property string $img_url
+ * @property UploadedFile $img_url
  * @property integer $price
  * @property string $description
  * @property integer $producer_id
@@ -35,9 +35,9 @@ class Products extends \yii\db\ActiveRecord
             [['img_url', 'price', 'producer_id'], 'required'],
             [['price', 'producer_id'], 'integer'],
             [['description'], 'string'],
-            [['img_url'], 'string', 'max' => 3000],
             [['name'], 'string', 'max' => 255],
             [['producer_id'], 'exist', 'skipOnError' => true, 'targetClass' => Producers::className(), 'targetAttribute' => ['producer_id' => 'id']],
+            [['img_url'], 'file'],
         ];
     }
 
@@ -47,11 +47,11 @@ class Products extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'img_url' => 'Ссылка на изображение',
             'price' => 'Цена',
 	        'name' => 'Наименование',
             'description' => 'Описание товара',
             'producer_id' => 'Производитель',
+	        'img_url' => 'Загрузите изображение'
         ];
     }
 
@@ -61,5 +61,10 @@ class Products extends \yii\db\ActiveRecord
     public function getProducer()
     {
         return $this->hasOne(Producers::className(), ['id' => 'producer_id']);
+    }
+    
+    public function uploadFile()
+    {
+    	$this->img_url->saveAs('@web/main/img/' . $this->img_url->baseName . '.' . $this->img_url->extension);
     }
 }

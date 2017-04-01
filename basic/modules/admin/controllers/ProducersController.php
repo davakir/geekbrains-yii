@@ -6,7 +6,9 @@ use app\models\dependencies\ProducersDep;
 use Yii;
 use app\models\Producers;
 use app\models\ProducersSearch;
+use yii\caching\Cache;
 use yii\caching\DbDependency;
+use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -16,6 +18,8 @@ use yii\filters\VerbFilter;
  */
 class ProducersController extends Controller
 {
+	const CACHE_KEY = 'producers';
+	
     /**
      * @inheritdoc
      */
@@ -38,12 +42,20 @@ class ProducersController extends Controller
     public function actionIndex()
     {
         $searchModel = new ProducersSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        	$producers = Yii::$app->db->cache(function ($db) use ($searchModel) {
+        		return Producers::find()->all();
+	        }, 120, ProducersDep::getDependency());
+        	
+        	var_dump($producers);die;
+        	
+        	$provider = new ActiveDataProvider([
+        		'query' => $producers
+	        ]);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-	        'dependency' => ProducersDep::getDependency()
+            'dataProvider' => $provider
         ]);
     }
 

@@ -55,7 +55,8 @@ $config = [
         ],
 	    'yandexMapsApi' => [
 		    'class' => 'mirocow\yandexmaps\Api',
-	    ]
+	    ],
+	    
     ],
 	
 	'modules' => [
