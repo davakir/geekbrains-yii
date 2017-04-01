@@ -7,16 +7,12 @@ use yii\widgets\ActiveForm;
 /* @var $model app\models\Products */
 /* @var $form yii\widgets\ActiveForm */
 /* @var $producers array */
+/* @var $image \app\models\ImageUpload */
 ?>
 
 <div class="products-form">
 
-    <?php $form = ActiveForm::begin([
-	    'id' => 'productsForm',
-	    'options' => [
-		    'enctype' => 'multipart/form-data'
-	    ]
-    ]); ?>
+    <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'price')->textInput() ?>
 	
@@ -26,7 +22,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'producer_id')->dropDownList($producers) ?>
 	
-	<?=  $form->field($model, 'img_url')->fileInput() ?>
+	<?=  $form->field($image, 'image')->fileInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

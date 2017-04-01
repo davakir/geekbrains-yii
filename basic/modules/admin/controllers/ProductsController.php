@@ -2,6 +2,7 @@
 
 namespace app\modules\admin\controllers;
 
+use app\models\ImageUpload;
 use app\models\Producers;
 use Yii;
 use app\models\Products;
@@ -66,22 +67,31 @@ class ProductsController extends Controller
     public function actionCreate()
     {
         $model = new Products();
+        $image = new ImageUpload();
         $producers = Producers::find()->all();
 	    
-        if ($model->load(Yii::$app->request->post()))
-        {
-			$model->img_url = UploadedFile::getInstance($model, 'img_url');
-        	$model->uploadFile();
-	        $model->save();
-            return $this->redirect(['view', 'id' => $model->id]);
-        }
-        else
-        {
-            return $this->render('create', [
-                'model' => $model,
-	            'producers' => $this->__prepareProducers($producers)
-            ]);
-        }
+	    if (Yii::$app->request->isPost)
+	    {
+		    if ($model->load(Yii::$app->request->post()))
+		    {
+		    	/* Upload image for product */
+			    $file = UploadedFile::getInstance($image, 'image');
+			    $fileName = $image->uploadFile($file);
+		    	
+			    /* Set file name to the Products model */
+			    $model->img_url = $fileName;
+			    
+			    /* Save the whole model */
+			    $model->save();
+			    return $this->redirect(['view', 'id' => $model->id]);
+		    }
+	    }
+	
+	    return $this->render('create', [
+		    'model' => $model,
+		    'producers' => $this->__prepareProducers($producers),
+		    'image' => $image
+	    ]);
     }
 
     /**
