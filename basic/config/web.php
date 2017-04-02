@@ -6,7 +6,7 @@ $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
 	'defaultRoute' => 'main/index',
-    'bootstrap' => ['log'],
+    'bootstrap' => ['log', 'queue'],
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
@@ -56,7 +56,10 @@ $config = [
 	    'yandexMapsApi' => [
 		    'class' => 'mirocow\yandexmaps\Api',
 	    ],
-	    
+	    'queue' => [
+		    'class' => '\zhuravljov\yii\queue\amqp\Queue::class',
+            'as log' => '\zhuravljov\yii\queue\LogBehavior::class',
+        ],
     ],
 	
 	'modules' => [
