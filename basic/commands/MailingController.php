@@ -19,6 +19,7 @@ class MailingController extends Controller
 	 */
 	public function actionSend()
 	{
+		var_dump(\Yii::$app->queue); die;
 		\Yii::$app->queue->push(
 			new MailingJob(
 				['mailingSubject' => 'sale3for1']

@@ -6,7 +6,7 @@ $db = require(__DIR__ . '/db.php');
 $config = [
     'id' => 'basic-console',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
+    'bootstrap' => ['log', 'queue'],
     'controllerNamespace' => 'app\commands',
     'components' => [
         'cache' => [
@@ -21,6 +21,10 @@ $config = [
             ],
         ],
         'db' => $db,
+	    'queue' => [
+		    'class' => \zhuravljov\yii\queue\amqp\Queue::class,
+		    'as log' => \zhuravljov\yii\queue\LogBehavior::class,
+	    ],
     ],
     'params' => $params,
     /*

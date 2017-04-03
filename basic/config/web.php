@@ -57,8 +57,8 @@ $config = [
 		    'class' => 'mirocow\yandexmaps\Api',
 	    ],
 	    'queue' => [
-		    'class' => '\zhuravljov\yii\queue\amqp\Queue::class',
-            'as log' => '\zhuravljov\yii\queue\LogBehavior::class',
+		    'class' => \zhuravljov\yii\queue\amqp\Queue::class,
+		    'as log' => \zhuravljov\yii\queue\LogBehavior::class,
         ],
     ],
 	

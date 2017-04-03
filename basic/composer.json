@@ -19,8 +19,10 @@
         "yiisoft/yii2-swiftmailer": "~2.0.0",
         "yiisoft/yii2-imagine": "^2.1",
         "yiisoft/yii2-jui": "^2.0",
+        "yiisoft/yii2-httpclient": "~2.0.0",
         "mirocow/yii2-yandex-maps": "dev-master",
-        "zhuravljov/yii2-queue": "*"
+        "zhuravljov/yii2-queue": "dev-master",
+        "php-amqplib/php-amqplib": "2.6.*"
     },
     "repositories": [
         {
