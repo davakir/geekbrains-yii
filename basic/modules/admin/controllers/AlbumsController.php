@@ -5,6 +5,7 @@ namespace app\modules\admin\controllers;
 use Yii;
 use app\models\Albums;
 use app\models\AlbumsSearch;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -26,6 +27,17 @@ class AlbumsController extends Controller
                     'delete' => ['POST'],
                 ],
             ],
+	        'access' => [
+		        'class' => AccessControl::className(),
+		        'only' => ['index'],
+		        'rules' => [
+			        [
+				        'allow' => true,
+				        'actions' => ['index'],
+				        'roles' => ['?'],
+			        ],
+		        ],
+	        ],
         ];
     }
 

@@ -43,22 +43,25 @@ class ImportController extends Controller
 				$this->stdout("Сохраняем данные в историю валютных котировок...\n\n");
 				$this->__saveQuoteHistory($quote);
 			}
-			$this->stdout("\n\nВсе успешно сохранено!\n\n", Console::FG_GREY, Console::BG_BLACK);
+			$this->stdout("\n\nВсе успешно сохранено за ". microtime() - $beginTime ." сек.!\n\n", Console::FG_GREY, Console::BG_BLACK);
 		}
 	}
 	
+	/**
+	 * @param $quote \SimpleXMLElement
+	 */
 	private function __saveQuote($quote)
 	{
-		$quoteId = $quote['@attributes']['ID'];
+		$quoteId = $quote->attributes()->ID;
 		
-		$existingQuote = Quotes::findOne($quoteId);
+		$existingQuote = Quotes::findOne(['id' => $quoteId]);
 		
 		$quotes = $existingQuote ? $existingQuote : (new Quotes());
 		$quotes->id = $quoteId;
-		$quotes->num_code = $quote['NumCode'];
-		$quotes->char_code = $quote['CharCode'];
-		$quotes->nominal = $quote['Nominal'];
-		$quotes->name = $quote['Value'];
+		$quotes->num_code = $quote->NumCode;
+		$quotes->char_code = $quote->CharCode;
+		$quotes->nominal = $quote->Nominal;
+		$quotes->name = $quote->Value;
 		
 		$existingQuote ? $quotes->update() : $quotes->save();
 	}
